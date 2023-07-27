@@ -122,8 +122,8 @@ const Lagu = sequelize.define(
 
 app.get("/songs", (req, res) => {
   Lagu.findAll({
-    offset: 1000,
-    limit: 1000,
+    offset: 50000,
+    limit: 100000,
     order: [["idlagu", "ASC"]],
   })
     .then((songs) => {
