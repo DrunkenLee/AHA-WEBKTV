@@ -1,0 +1,23 @@
+# AHA-WEBKTV
+
+    1	idlagu	int(11)
+    2	edp	int(11)
+    3	judul	varchar(255)
+    4	artis	varchar(255)
+    5	path	varchar(255)
+    6	voc	int(11)
+    7	xvoc	int(11)
+    8	gol	int(11)
+    9	jenis	int(11)
+    10	hade	int(11)
+    11	vol	int(11)
+    12	hits	int(11)
+    13	new	int(11)
+    14	popular	int(11)
+    15	idsource Indeks	int(11)
+    16	datertime	datetime
+    17	judul3	varchar(255)
+    18	exjudul	varchar(255)
+    19	artis3	varchar(255)
+    20	exartis	varchar(255)
+    21	Balancing	int(11)
