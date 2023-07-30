@@ -1,4 +1,5 @@
-@import-normalize;
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 :root {
   --dark: #101315;
   --light: #eeeeee;
@@ -32,7 +33,7 @@ h1 {
   color: #ff9d00;
   font-size: 175%;
   font-weight: 400;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Quicksand";
 }
 
 h2 {
@@ -42,7 +43,7 @@ h2 {
   font-family: "Montserrat", sans-serif;
 }
 .h1-title {
-  font-weight: 1000;
+  font-weight: bold;
   font-size: 250%;
   letter-spacing: 0;
   font-family: "Audiowide", sans-serif;
@@ -50,24 +51,35 @@ h2 {
 
 h3 {
   text-align: center;
-  color: var(--dark);
+  color: #9e9e9e;
   font-weight: 700;
   font-size: 2rem;
   letter-spacing: 1px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Quicksand";
   padding: 2rem 0 1.5rem 0;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+h4 {
+  text-align: center;
+  color: #9e9e9e;
+  font-family: "Quicksand";
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
   margin: 0;
   text-transform: capitalize;
 }
 
 h5 {
   text-align: center;
-  color: var(--dark);
+  color: #9e9e9e;
   font-weight: 500;
   font-size: 130%;
   text-align: justify;
   letter-spacing: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Quicksand";
   padding: 0;
   line-height: 125%;
   margin: 0;
@@ -93,7 +105,6 @@ button {
   height: 3rem;
   border: none;
   outline: none;
-  -webkit-appearance: none;
   border-radius: 4px;
   font-weight: 600;
   font-size: 1.25rem;
@@ -310,30 +321,57 @@ li {
 }
 
 .navbar-container {
+  /* border-style: solid;
+  border-color: #9e9e9e; */
   display: flex;
   align-items: center;
-  border-style: solid;
-  border-color: #9e9e9e;
   height: 10vh;
   margin: 20px;
   gap: 40px;
+  position: relative;
+}
+
+.h1-title::after {
+  content: "";
+  position: absolute;
+  bottom: -2px; /* Adjust this value to control the distance of the line from the text */
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgb(
+    202,
+    202,
+    202
+  ); /* Change this color to the desired line color */
+
+  /* Add glowing shadow effect */
+  box-shadow: 0 0 5px 5px rgba(179, 179, 179, 0.2);
 }
 
 .body-container {
   margin: 20px;
 }
 
+img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 .navbar-items {
-  border-color: #9e9e9e;
-  border-style: solid;
+  /* border-color: #9e9e9e;
+  border-style: solid; */
   width: 60px;
   height: 60px;
   margin-left: 20px;
 }
 
 .home-container {
+  /* border-style: solid;
+  border-color: #9e9e9e; */
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 .player-container {
@@ -353,4 +391,107 @@ li {
   border-style: solid;
   height: 20vh;
   width: 75vw;
+}
+
+.slider-container {
+  /* border-style: solid;
+  border-color: #9e9e9e; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel {
+  /* border-style: solid;
+  border-color: #9e9e9e; */
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+  overflow: hidden;
+  width: 70%;
+  min-width: 30rem;
+  border-radius: 2rem;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.inner-carousel {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.item img {
+  border-radius: 2rem;
+  pointer-events: none;
+}
+
+.item {
+  min-width: 30rem;
+  min-height: 35rem;
+  width: 100%;
+  height: 100%;
+}
+
+.c-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.previous-button {
+  left: 0;
+}
+
+.next-button {
+  right: 0;
+}
+
+.aha-button1 {
+  margin: 20px 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Quicksand";
+  background-color: transparent;
+  font-size: 50px;
+  border: 2px solid;
+  border-radius: 2rem;
+  padding: 10px 20px;
+  color: #ffaa00;
+  cursor: pointer;
+  /* Increase the width as needed */
+  width: 350px;
+  height: 100px;
+}
+
+.article-containerRight {
+  border-style: solid;
+  border-color: #97979744;
+  border-radius: 2rem;
+  border-width: 1px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20%;
+  width: 40%;
+  color: #ffffff;
+  font-family: "Quicksand";
+}
+
+.article-containerLeft {
+  border-style: solid;
+  border-color: #97979744;
+  border-radius: 2rem;
+  border-width: 1px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20%;
+  width: 40%;
+  color: #ffffff;
+  font-family: "Quicksand";
 }

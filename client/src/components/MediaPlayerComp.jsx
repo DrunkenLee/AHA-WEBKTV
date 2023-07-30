@@ -11,7 +11,7 @@ const MediaPlayerComp = forwardRef(({ url }, ref) => {
       width="100%"
       height="100%"
       controls={false}
-      playing
+      playing={false}
       config={{
         youtube: {
           playerVars: {
