@@ -10,6 +10,17 @@ class Controller {
   static async getAll(limit, offset) {
     try {
       const instanceSongs = await Song.findAndCountAll({
+        attributes: [
+          "judul",
+          "artis",
+          "judul3",
+          "exjudul",
+          "artis3",
+          "exartis",
+          "GolId",
+          "JenisId",
+          "vol",
+        ],
         limit: limit || 10,
         offset: offset || 0,
       });
@@ -35,6 +46,17 @@ class Controller {
             },
           ],
         },
+        attributes: [
+          "judul",
+          "artis",
+          "judul3",
+          "exjudul",
+          "artis3",
+          "exartis",
+          "GolId",
+          "JenisId",
+          "vol",
+        ],
         limit: limit || 10,
         offset: offset || 0,
       });
@@ -60,6 +82,17 @@ class Controller {
             },
           ],
         },
+        attributes: [
+          "judul",
+          "artis",
+          "judul3",
+          "exjudul",
+          "artis3",
+          "exartis",
+          "GolId",
+          "JenisId",
+          "vol",
+        ],
         limit: limit || 10,
         offset: offset || 0,
       });
@@ -98,6 +131,17 @@ class Controller {
             ],
           },
         },
+        attributes: [
+          "judul",
+          "artis",
+          "judul3",
+          "exjudul",
+          "artis3",
+          "exartis",
+          "GolId",
+          "JenisId",
+          "vol",
+        ],
         limit: limit || 10,
         offset: offset || 0,
       });

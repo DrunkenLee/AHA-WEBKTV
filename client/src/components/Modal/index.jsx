@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Backdrop from "../Backdrop";
 
@@ -22,7 +23,16 @@ const dropIn = {
   },
 };
 
-const Modal = ({ handleClose, text }) => {
+const Modal = ({ handleClose }) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    console.log("Username:", username);
+    console.log("Password:", password);
+  };
+
   return (
     <Backdrop onClick={handleClose}>
       <motion.div
@@ -33,10 +43,43 @@ const Modal = ({ handleClose, text }) => {
         animate="visible"
         exit="exit"
       >
-        <p>{text}</p>
-        <button className="close-button" variant="info" onClick={handleClose}>
-          Close
-        </button>
+        <h2>Login</h2>
+        <form className="login-form">
+          <div className="form-group">
+            <label htmlFor="username">Username:</label>
+            <input
+              type="text"
+              id="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div className="form-button">
+            <button
+              type="button"
+              className="close-button"
+              onClick={handleLogin}
+            >
+              Login
+            </button>
+            <button
+              type="button"
+              className="close-button"
+              onClick={handleClose}
+            >
+              Close
+            </button>
+          </div>
+        </form>
       </motion.div>
     </Backdrop>
   );

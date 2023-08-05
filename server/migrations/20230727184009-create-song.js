@@ -1,73 +1,81 @@
-'use strict';
+"use strict";
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Songs', {
+    await queryInterface.createTable("Songs", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       judul: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING,
       },
       artis: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING,
       },
       path: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING,
       },
       voc: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
       },
       xvoc: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
       },
       GolId: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
       },
       JenisId: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
       },
       vol: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
       },
       hits: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       new: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       popular: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       judul3: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       exjudul: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       artis3: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       exartis: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       Balancing: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Songs');
-  }
+    await queryInterface.dropTable("Songs");
+  },
 };

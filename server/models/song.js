@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Song extends Model {
     /**
@@ -13,26 +11,53 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Song.init({
-    judul: DataTypes.STRING,
-    artis: DataTypes.STRING,
-    path: DataTypes.STRING,
-    voc: DataTypes.INTEGER,
-    xvoc: DataTypes.INTEGER,
-    GolId: DataTypes.INTEGER,
-    JenisId: DataTypes.INTEGER,
-    vol: DataTypes.INTEGER,
-    hits: DataTypes.INTEGER,
-    new: DataTypes.INTEGER,
-    popular: DataTypes.INTEGER,
-    judul3: DataTypes.STRING,
-    exjudul: DataTypes.STRING,
-    artis3: DataTypes.STRING,
-    exartis: DataTypes.STRING,
-    Balancing: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'Song',
-  });
+  Song.init(
+    {
+      judul: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      artis: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      path: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      voc: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      xvoc: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      GolId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      JenisId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      vol: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      hits: DataTypes.INTEGER,
+      new: DataTypes.INTEGER,
+      popular: DataTypes.INTEGER,
+      judul3: DataTypes.STRING,
+      exjudul: DataTypes.STRING,
+      artis3: DataTypes.STRING,
+      exartis: DataTypes.STRING,
+      Balancing: DataTypes.INTEGER,
+    },
+    {
+      sequelize,
+      modelName: "Song",
+    }
+  );
   return Song;
 };
