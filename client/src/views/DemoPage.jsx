@@ -59,7 +59,7 @@ const articleVariantLeft = {
   },
 };
 
-const HomePage = () => {
+const DemoPage = () => {
   const [homeState, setHomeState] = useState(true);
   const playerRef = useRef(null);
   const navigate = useNavigate();
@@ -71,7 +71,7 @@ const HomePage = () => {
     }, 1500);
   };
 
-  return <h1>Home Page</h1>;
+  return <h1>Demo Page</h1>;
 };
 
-export default HomePage;
+export default DemoPage;
