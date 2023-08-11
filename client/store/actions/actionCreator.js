@@ -27,14 +27,14 @@ export const setTheme = () => {
   };
 };
 
-export const getSongs = (limit, offset) => {
+export const getSongs = (limit, offset, title, artis) => {
   return async (dispatch, getState) => {
     try {
       const { data } = await axios({
         method: "get",
-        url: `${baseURL}?limit=${limit}&offset=${offset}`,
+        url: `${baseURL}?limit=${limit}&offset=${offset}&title=${title}&artis=${artis}`,
       });
-      const action = setSongsData(data.rows);
+      const action = setSongsData(data);
       dispatch(action);
     } catch (error) {
       console.log(error);

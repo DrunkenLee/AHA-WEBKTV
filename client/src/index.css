@@ -58,3 +58,60 @@ h3 {
   padding: 1rem;
   text-align: center;
 }
+
+p {
+  color: #00000034;
+}
+
+.home-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  align-items: center;
+}
+.right-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.left-container {
+  margin-top: 3rem;
+  gap: 1rem;
+}
+
+.video-js {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.card-container {
+  display: flex;
+  max-width: 1200px;
+  min-width: 720px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  padding-bottom: 5rem;
+}
+
+.Card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.281);
+  color: aliceblue;
+  width: 20rem;
+  height: auto;
+}
+
+.sidebar {
+  cursor: pointer;
+}

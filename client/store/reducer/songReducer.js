@@ -1,5 +1,6 @@
 const initalState = {
   data: [],
+  count: 0,
 };
 
 function songReducer(state = initalState, action) {
@@ -7,7 +8,8 @@ function songReducer(state = initalState, action) {
     case "fetch/success":
       return {
         ...state,
-        data: action.payload,
+        count: action.payload.count,
+        data: action.payload.rows,
       };
     default:
       return state;

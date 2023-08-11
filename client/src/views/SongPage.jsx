@@ -70,7 +70,6 @@ const articleVariantLeft = {
 
 const SongPage = () => {
   const [homeState, setHomeState] = useState(true);
-  const [playState, setPlayState] = useState(false);
   const playerRef = useRef(null);
   const navigate = useNavigate();
 
@@ -85,28 +84,6 @@ const SongPage = () => {
     <motion.div className="page-container">
       <h3 style={{ marginTop: "1rem" }}>Database Simulator</h3>
       <CustomTable />
-      <h5>Room Not Detected!</h5>
-      <motion.div className="footer-container">
-        <HStack>
-          <Button style={{ backgroundColor: "transparent" }}>
-            <Icon as={MdSkipPrevious} w={"3rem"} h={"3rem"} />
-          </Button>
-          <Button
-            onClick={() => setPlayState(playState ? false : true)}
-            style={{ backgroundColor: "transparent" }}
-          >
-            {playState ? (
-              <Icon as={MdOutlinePauseCircleFilled} w={"3rem"} h={"3rem"} />
-            ) : (
-              <Icon as={MdPlayCircleOutline} w={"3rem"} h={"3rem"} />
-            )}
-          </Button>
-
-          <Button style={{ backgroundColor: "transparent" }}>
-            <Icon as={MdSkipNext} w={"3rem"} h={"3rem"} />
-          </Button>
-        </HStack>
-      </motion.div>
     </motion.div>
   );
 };

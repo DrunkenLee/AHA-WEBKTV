@@ -5,7 +5,14 @@ import { Outlet, useNavigate } from "react-router-dom";
 import { AnimatePresence, color, motion, spring } from "framer-motion";
 import Modal from "./components/Modal";
 import Sidebar from "./components/SidebarComp";
-import { Button, ButtonGroup } from "@chakra-ui/react";
+import { Button, HStack, ButtonGroup } from "@chakra-ui/react";
+import { Icon } from "@chakra-ui/react";
+import {
+  MdPlayCircleOutline,
+  MdOutlinePauseCircleFilled,
+  MdSkipNext,
+  MdSkipPrevious,
+} from "react-icons/md";
 
 const containerVariant = {
   hidden: {
@@ -59,6 +66,7 @@ const buttonVariant = {
 const AnimatedButton = motion(Button);
 
 function App() {
+  const [playState, setPlayState] = useState(false);
   const [loginState, setLoginState] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
@@ -94,6 +102,27 @@ function App() {
       </motion.div>
       <motion.div className="outlet-container">
         <Outlet />
+      </motion.div>
+      <motion.div className="footer-container" style={{ marginTop: "10rem" }}>
+        <HStack>
+          <Button style={{ backgroundColor: "transparent" }}>
+            <Icon as={MdSkipPrevious} w={"3rem"} h={"3rem"} />
+          </Button>
+          <Button
+            onClick={() => setPlayState(playState ? false : true)}
+            style={{ backgroundColor: "transparent" }}
+          >
+            {playState ? (
+              <Icon as={MdOutlinePauseCircleFilled} w={"3rem"} h={"3rem"} />
+            ) : (
+              <Icon as={MdPlayCircleOutline} w={"3rem"} h={"3rem"} />
+            )}
+          </Button>
+
+          <Button style={{ backgroundColor: "transparent" }}>
+            <Icon as={MdSkipNext} w={"3rem"} h={"3rem"} />
+          </Button>
+        </HStack>
       </motion.div>
     </>
   );

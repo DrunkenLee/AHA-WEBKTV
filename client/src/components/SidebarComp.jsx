@@ -21,6 +21,7 @@ function Sidebar() {
         variant="outline"
       />
       <VStack
+        className="sidebar"
         as="nav"
         pos="fixed"
         left={0}
@@ -35,11 +36,13 @@ function Sidebar() {
         zIndex={10}
       >
         <CloseButton onClick={onClose} alignSelf="flex-end" />
-        {/* Sidebar content */}
+        <h5 style={{ color: "rgba(245, 245, 245, 0.312)" }}>Navigation</h5>
         <a onClick={() => navigate("/")}>Home</a>
         <a onClick={() => navigate("/songdb")}>Song Database</a>
-        <a onClick={() => navigate("/demo")}>Demo</a>
-        <a>Contact</a>
+        <a onClick={() => navigate("/demo")}>Documentation</a>
+        <a>About</a>
+        <h5 style={{ color: "rgba(245, 245, 245, 0.312)" }}>User</h5>
+        <a onClick={() => navigate("/")}>Profile</a>
       </VStack>
     </Box>
   );
