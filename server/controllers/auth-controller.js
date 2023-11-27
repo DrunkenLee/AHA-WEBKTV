@@ -159,9 +159,10 @@ class Controller {
 
         const {limit , offset} = getPagination(page, size)
 
-            let where = {[Op.or]: []}
+            let where = {}
 
         if(s && typeof s === 'string') {
+            where = {[Op.or]: []}
             where[Op.or].push(
             {
                 judul: {[Op.iLike]: `%${s}%` }
@@ -186,8 +187,7 @@ class Controller {
 
         console.log({where});
 
-        const data = await Song.findAndCountAll({where, include: [{model: Golongan, attributes: ["id","name"]}]})
-
+        const data = await Song.findAndCountAll({where, limit, offset, include: [{model: Golongan, attributes: ["id","name"]}]})
         const response = getPagingData(data, page, limit)
         return res.status(200).json(response)
 
