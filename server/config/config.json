@@ -1,9 +1,10 @@
 {
   "development": {
     "username": "postgres",
-    "password": "postgres",
-    "database": "AHA_DB_DEV",
-    "host": "127.0.0.1",
+    "password": "lDwNCB0aC5DroYnN",
+    "database": "postgres",
+    "port": 5432,
+    "host": "db.qaoxeaxzpxzqzsnmwmoc.supabase.co",
     "dialect": "postgres"
   },
   "test": {

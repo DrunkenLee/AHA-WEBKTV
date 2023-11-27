@@ -8,7 +8,10 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Golongan.hasMany(models.Song);
+      Golongan.hasMany(models.Song, {
+        foreignKey: 'GolId',
+        sourceKey: 'id',
+      });
     }
   }
   Golongan.init(
